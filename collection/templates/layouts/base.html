@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+         {% block title %}My Hello Web App Project{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    {% block header %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <h1 class="title">My Hello Web App Project</h1>
+      <nav>
+        <ul>
+          <li><a href='{% url 'home' %}'>Home</a></li>
+          <li><a href='{% url 'about' %}'>About</a></li>
+          <li><a href='{% url 'contact' %}'>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    {% block content %}{% endblock %}
+    {% block footer %}{% endblock %}
+  </body>
+</html>
