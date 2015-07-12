@@ -1,6 +1,7 @@
 {% extends 'layouts/base.html' %}
+{% load humanize %}
 {% block title %}Homepage – {{ block.super}}{% endblock %}
 {% block content %}
     <h1 class="title">Hello Quoter!</h1>
-    <p class="text">I am a baby website.</p>
+    <p class="text">This is my name: {{ quote|slugify }}</p>
 {% endblock %}
