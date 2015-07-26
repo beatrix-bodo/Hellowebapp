@@ -1,10 +1,9 @@
 from django.shortcuts import render
+from collection.models import Quote
 
 # Create your views here.
 def index(request):
-    number = 6
-    quote = "Quote title"
+    quotes = Quote.objects.all()
     return render(request, 'index.html', {
-        'number': number,
-        'quote': quote,
+        'quotes': quotes,
     })

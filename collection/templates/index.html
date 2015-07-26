@@ -2,6 +2,8 @@
 {% load humanize %}
 {% block title %}Homepage – {{ block.super}}{% endblock %}
 {% block content %}
-    <h1 class="title">Hello Quoter!</h1>
-    <p class="text">This is my name: {{ quote|slugify }}</p>
+    {% for quote in quotes %}
+    <h2>{{ quote.name }}</h2>
+    <p>{{ quote.description }}</p>
+    {% endfor %}
 {% endblock %}
