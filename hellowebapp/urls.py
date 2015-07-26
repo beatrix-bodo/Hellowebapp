@@ -28,5 +28,7 @@ urlpatterns = [
     url(r'^quotes/(?P<slug>[-\w]+)/$',
         'collection.views.quote_detail',
         name='quote_detail'),
+    url(r'^quotes/(?P<slug>[-\w]+)/edit/$',
+        'collection.views.edit_quote', name='edit_quote'),
     url(r'^admin/', include(admin.site.urls)),
 ]

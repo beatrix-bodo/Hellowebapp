@@ -2,6 +2,7 @@
 {% load humanize %}
 {% block title %}Homepage – {{ block.super}}{% endblock %}
 {% block content %}
-    <h2>{{ quote.name }}</h2>
-    <p>{{ quote.description }}</p>
+<h2>{{ quote.name }}</h2>
+<p>{{ quote.description }}</p>
+<a href="{% url 'edit_quote' slug=quote.slug %}">Edit me!</a>
 {% endblock %}
