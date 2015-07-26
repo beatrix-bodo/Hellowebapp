@@ -7,3 +7,9 @@ def index(request):
     return render(request, 'index.html', {
         'quotes': quotes,
     })
+
+def quote_detail(request, slug):
+    quote = Quote.objects.get(slug=slug)
+    return render(request, 'quotes/quote_detail.html', {
+        'quote': quote,
+    })

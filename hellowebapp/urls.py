@@ -25,5 +25,8 @@ urlpatterns = [
     url(r'^contact/$',
         TemplateView.as_view(template_name='contact.html'),
         name='contact'),
+    url(r'^quotes/(?P<slug>[-\w]+)/$',
+        'collection.views.quote_detail',
+        name='quote_detail'),
     url(r'^admin/', include(admin.site.urls)),
 ]
